@@ -6,11 +6,8 @@
   <title>Otash Coin</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -20,7 +17,7 @@
 
     header {
       text-align: center;
-      padding: 120px 20px 60px;
+      padding: 100px 20px 60px;
       background: url('https://images.unsplash.com/photo-1614064641938-3bbee52942dc') no-repeat center/cover;
       position: relative;
     }
@@ -39,7 +36,7 @@
 
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 4em;
+      font-size: 3em;
       margin: 0;
     }
 
@@ -49,21 +46,32 @@
     }
 
     .logo img {
-      width: 220px;
+      width: 200px;
       border-radius: 50%;
       box-shadow: 0 0 20px gold;
     }
 
     section {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       padding: 60px 20px;
     }
 
     h2 {
       text-align: center;
-      font-size: 2.8em;
+      font-size: 2.5em;
       margin-bottom: 40px;
+    }
+
+    .price {
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    canvas {
+      max-width: 100%;
+      margin-top: 30px;
     }
 
     .team {
@@ -75,6 +83,7 @@
     .team div {
       background: rgba(255, 255, 255, 0.05);
       padding: 20px;
+      margin: 10px;
       border-radius: 12px;
       backdrop-filter: blur(8px);
       font-weight: 500;
@@ -84,60 +93,41 @@
     footer {
       background-color: #111;
       text-align: center;
-      padding: 40px 10px;
+      padding: 30px 10px;
     }
 
     footer a {
-      margin: 0 15px;
+      margin: 0 10px;
       color: #00f7ff;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
 
-    .faq-item, .testimonial {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-
-    form input, form button {
-      font-size: 1rem;
-      padding: 12px;
-      border-radius: 5px;
+    .buy-btn {
+      display: block;
+      margin: 40px auto;
+      background: gold;
+      color: black;
+      padding: 15px 30px;
+      font-weight: bold;
+      font-size: 1.2em;
       border: none;
-      margin: 10px;
-    }
-
-    form input {
-      width: 300px;
-      max-width: 90%;
-    }
-
-    form button {
-      background-color: #00f7ff;
-      color: #000;
+      border-radius: 12px;
       cursor: pointer;
+      transition: 0.3s;
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5em;
-      }
+    .buy-btn:hover {
+      background: #ffd700;
+    }
 
-      h2 {
-        font-size: 2em;
-      }
-
-      .logo img {
-        width: 160px;
-      }
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.8em; }
     }
   </style>
 </head>
@@ -154,12 +144,21 @@
   <section data-aos="fade-up">
     <h2>О проекте</h2>
     <p style="text-align: center; max-width: 800px; margin: auto;">
-      <strong>Otash Coin</strong> — новшество в мире цифровых валют. Это безопасная, быстрая и перспективная платформа для всех, кто стремится быть частью финансового будущего. Мы создаём не просто токен — мы создаём сообщество и экосистему.
+      <strong>Otash Coin</strong> — это новейшая криптовалюта, созданная с целью внедрения цифровых технологий в повседневную жизнь. Мы стремимся упростить финансовые операции, сделать их безопасными, быстрыми и прозрачными.
     </p>
-    <img src="https://akatcsgg.github.io/OtashCoin/otash-coin.png" alt="Otash Coin" style="display:block; margin: 40px auto; width: 300px;" data-aos="zoom-in" />
+    <p style="text-align: center; max-width: 800px; margin: auto; margin-top: 20px;">
+      Проект основан на современных блокчейн-решениях и направлен на децентрализацию мировой экономики. Otash Coin — это не просто крипта, это движение к свободе и независимости.
+    </p>
+    <button class="buy-btn">Купить Otash Coin</button>
   </section>
 
   <section data-aos="fade-up">
+    <h2>Курс Otash Coin</h2>
+    <div class="price" id="coin-price">$0.0560</div>
+    <canvas id="coinChart" height="100"></canvas>
+  </section>
+
+  <section data-aos="fade-up" id="team">
     <h2>Наша команда</h2>
     <div class="team">
       <div>Кудеров Т. — CEO</div>
@@ -171,38 +170,6 @@
     </div>
   </section>
 
-  <section data-aos="fade-up">
-    <h2>Подписка на новости</h2>
-    <form action="#">
-      <input type="email" placeholder="Введите ваш email" required>
-      <button type="submit">Подписаться</button>
-    </form>
-  </section>
-
-  <section data-aos="fade-up">
-    <h2>FAQ</h2>
-    <div class="faq-item">
-      <h3>Что такое Otash Coin?</h3>
-      <p>Это криптовалюта нового поколения, основанная на современных блокчейн-технологиях.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Как начать?</h3>
-      <p>Просто зарегистрируйтесь, создайте кошелёк и приобретите токены Otash Coin.</p>
-    </div>
-  </section>
-
-  <section data-aos="fade-up">
-    <h2>Отзывы</h2>
-    <div class="testimonial">
-      <p>"Я использую Otash Coin уже месяц — всё стабильно и быстро. Рекомендую!"</p>
-      <p>- Артём, трейдер</p>
-    </div>
-    <div class="testimonial">
-      <p>"Наконец-то проект, в который не страшно инвестировать!"</p>
-      <p>- Лейла, предприниматель</p>
-    </div>
-  </section>
-
   <footer data-aos="fade-up">
     <h3>Связь с нами:</h3>
     <a href="https://t.me/nevekstg_media" target="_blank">Telegram</a>
@@ -210,12 +177,60 @@
     <a href="https://instagram.com/nevekstg_media" target="_blank">Instagram</a>
   </footer>
 
+  <!-- AOS animation -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Плавное обновление курса и графика -->
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
+    const priceEl = document.getElementById("coin-price");
+    const ctx = document.getElementById("coinChart").getContext("2d");
+
+    let prices = [0.0560];
+    let labels = [new Date().toLocaleTimeString()];
+
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Otash Coin ($)',
+          data: prices,
+          backgroundColor: 'rgba(255,215,0,0.2)',
+          borderColor: 'gold',
+          borderWidth: 2,
+          tension: 0.3,
+          pointRadius: 0
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: false }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
     });
+
+    function getRandomPrice(min, max) {
+      return (Math.random() * (max - min) + min).toFixed(4);
+    }
+
+    function updateChart() {
+      const newPrice = parseFloat(getRandomPrice(0.0560, 0.0780));
+      const time = new Date().toLocaleTimeString();
+      priceEl.textContent = `$${newPrice.toFixed(4)}`;
+      prices.push(newPrice);
+      labels.push(time);
+      if (prices.length > 15) {
+        prices.shift();
+        labels.shift();
+      }
+      chart.update();
+    }
+
+    setInterval(updateChart, 2000);
   </script>
 </body>
 </html>
