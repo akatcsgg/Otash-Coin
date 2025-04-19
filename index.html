@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Otash Coin</title>
 
   <!-- Шрифты -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Стили -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- AOS анимации -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
   <nav class="navbar">
@@ -49,7 +49,7 @@
             </ul>
           </div>
           <div class="about-image">
-            <img src="otabek.png" alt="Otash Coin">
+            <img src="otabek.png" alt="Otash Coin" />
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
       <div class="container">
         <h2>Купить Otash Coin</h2>
         <p>Введите сумму в USD:</p>
-        <input type="number" id="amount" placeholder="Введите сумму">
+        <input type="number" id="amount" placeholder="Введите сумму" />
         <p>Вы получите: <strong id="result">0</strong> Otash Coin</p>
         <button class="btn-secondary" onclick="window.open('https://example-buy.com', '_blank')">Купить сейчас</button>
       </div>
@@ -76,42 +76,12 @@
       <div class="container">
         <h2>Наша команда</h2>
         <div class="team-grid">
-          <div class="team-member">
-            <div class="team-card">
-              <h3>Кудеров Т.</h3>
-              <p>CEO</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="team-card">
-              <h3>Кувантаев О.</h3>
-              <p>Лицо Компании</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="team-card">
-              <h3>Кучимова Г.</h3>
-              <p>COO</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="team-card">
-              <h3>Абдыгалыев Д.</h3>
-              <p>Зам. СОО</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="team-card">
-              <h3>Рустамов А.</h3>
-              <p>Маркетолог</p>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="team-card">
-              <h3>Атхамджонов И.</h3>
-              <p>Программист</p>
-            </div>
-          </div>
+          <div class="team-member"><div class="team-card"><h3>Кудеров Т.</h3><p>CEO</p></div></div>
+          <div class="team-member"><div class="team-card"><h3>Кувантаев О.</h3><p>Лицо Компании</p></div></div>
+          <div class="team-member"><div class="team-card"><h3>Кучимова Г.</h3><p>COO</p></div></div>
+          <div class="team-member"><div class="team-card"><h3>Абдыгалыев Д.</h3><p>Зам. СОО</p></div></div>
+          <div class="team-member"><div class="team-card"><h3>Рустамов А.</h3><p>Маркетолог</p></div></div>
+          <div class="team-member"><div class="team-card"><h3>Атхамджонов И.</h3><p>Программист</p></div></div>
         </div>
       </div>
     </section>
@@ -119,10 +89,10 @@
     <section id="contact" class="section">
       <div class="container">
         <h2>Контакты</h2>
-        <div class="contact-grid">
-          <div class="contact-item"><a href="https://t.me/nevekstg_media">Telegram</a></div>
-          <div class="contact-item"><a href="https://instagram.com/nevekstg_media">Instagram</a></div>
-          <div class="contact-item"><a href="mailto:support@otashcoin.com">Email</a></div>
+        <div class="social-links">
+          <a href="https://t.me/your_channel" class="social-btn telegram" target="_blank">Telegram</a>
+          <a href="https://instagram.com/your_profile" class="social-btn instagram" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com/@your_profile" class="social-btn tiktok" target="_blank">TikTok</a>
         </div>
       </div>
     </section>
@@ -134,17 +104,11 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="script.js"></script>
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- AOS init -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<!-- Твой основной JS -->
-<script src="script.js"></script>
 </body>
 </html>
