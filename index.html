@@ -4,62 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Otash Coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
       color: white;
-      text-align: center;
     }
 
     header {
-      padding: 50px 20px 30px;
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: url('https://images.unsplash.com/photo-1614064641938-3bbee52942dc') no-repeat center/cover;
+      position: relative;
     }
 
-    header h1 {
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    header * {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 3em;
-      margin-bottom: 10px;
+      margin: 0;
     }
 
-    .coin-image {
+    .logo {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .logo img {
       width: 200px;
-      height: auto;
-      margin: 20px auto;
-      display: block;
       border-radius: 50%;
-      box-shadow: 0 0 30px gold;
+      box-shadow: 0 0 20px gold;
     }
 
     section {
-      margin: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
     }
 
-    #team {
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 500px;
-      margin: auto;
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
     }
 
     .team div {
-      background-color: rgba(255, 255, 255, 0.08);
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 1.1em;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
     }
 
     footer {
       background-color: #111;
-      padding: 20px;
-      margin-top: 40px;
+      text-align: center;
+      padding: 30px 10px;
     }
 
     footer a {
-      margin: 0 15px;
-      color: #00eaff;
+      margin: 0 10px;
+      color: #00f7ff;
       text-decoration: none;
       font-weight: bold;
     }
@@ -67,32 +94,51 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.8em; }
+    }
   </style>
 </head>
 <body>
-
-  <header>
+  <header data-aos="fade-down">
     <h1>Otash Coin</h1>
-    <img src="images/otash-coin.png" alt="Otash Coin" class="coin-image" />
-    <p>Новая эра криптовалют. Инновации. Надёжность. Будущее.</p>
+    <p>Будущее криптовалют уже здесь</p>
   </header>
 
-  <section id="team">
-    <h2>Наша команда</h2>
-    <div>Кудеров Т. — CEO</div>
-    <div>Кувантаев О. — CTO</div>
-    <div>Кучимова Н. — Маркетинг</div>
-    <div>Абдыгалыев Д. — Уборщик</div>
-    <div>Рустамов А. — Зам. CTO</div>
-    <div>Атхамджонов И. — Программист</div>
+  <div class="logo" data-aos="zoom-in">
+    <img src="https://akatcsgg.github.io/OtashCoin/otash-coin.png" alt="Otash Coin" />
+  </div>
+
+  <section data-aos="fade-up">
+    <h2>О проекте</h2>
+    <p style="text-align: center; max-width: 700px; margin: auto;">
+      Otash Coin — это инновационная цифровая валюта, созданная для новой эпохи децентрализованных финансов.
+      Мы стремимся сделать криптовалюту простой, безопасной и доступной для всех.
+    </p>
   </section>
 
-  <footer>
-    <p>Связь с нами:</p>
+  <section data-aos="fade-up" id="team">
+    <h2>Наша команда</h2>
+    <div class="team">
+      <div>Кудеров Т. — CEO</div>
+      <div>Кувантаев О. — Лицо Компании</div>
+      <div>Кучимова Н. — Маркетинг</div>
+      <div>Абдыгалыев Д. — CTO</div>
+      <div>Рустамов А. — Зам. CTO</div>
+      <div>Атхамджонов И. — Программист</div>
+    </div>
+  </section>
+
+  <footer data-aos="fade-up">
+    <h3>Связь с нами:</h3>
     <a href="https://t.me/nevekstg_media" target="_blank">Telegram</a>
     <a href="https://tiktok.com/@nevekstg_media" target="_blank">TikTok</a>
     <a href="https://instagram.com/nevekstg_media" target="_blank">Instagram</a>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
