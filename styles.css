@@ -176,3 +176,44 @@ body {
 .contact-item a[href*="tiktok"] {
   background: #000;
 }
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.social-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-size: 16px;
+}
+
+.telegram {
+  background-color: #0088cc;
+}
+
+.telegram:hover {
+  background-color: #0077b0;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.instagram:hover {
+  opacity: 0.85;
+}
+
+.tiktok {
+  background-color: #010101;
+}
+
+.tiktok:hover {
+  background-color: #222;
+}
