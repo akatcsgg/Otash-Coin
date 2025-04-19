@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Otash Coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 30px 0;
+    }
+    header img {
+      max-width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      color: #00ffcc;
+    }
+    section {
+      margin: 50px 0;
+    }
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .member {
+      background-color: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .member h3 {
+      color: #00ffd5;
+    }
+    .calculator input {
+      padding: 10px;
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+    .calculator {
+      max-width: 400px;
+      margin: auto;
+      background-color: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+    .chart-container {
+      max-width: 600px;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .buy-button {
+      background-color: #00ffcc;
+      color: black;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .buy-button:hover {
+      background-color: #00ccaa;
+    }
+    a {
+      color: #00ffd5;
+      text-decoration: none;
+    }
+
+    .faq-item {
+      margin: 15px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: rgba(255,255,255,0.05);
+    }
+
+    .faq-question {
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      padding: 15px;
+      display: none;
+      background-color: rgba(0,0,0,0.2);
+      font-size: 0.95rem;
+    }
+
+    .faq-question.active + .faq-answer {
+      display: block;
+    }
+
+    /* ПК версия */
+    @media (min-width: 768px) {
+      body {
+        padding: 40px;
+      }
+
+      header img {
+        max-width: 250px;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .team {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .calculator {
+        padding: 30px;
+        font-size: 1.1rem;
+      }
+
+      .faq-question {
+        font-size: 1.2rem;
+      }
+
+      .faq-answer {
+        font-size: 1rem;
+      }
+
+      .chart-container {
+        max-width: 800px;
+      }
+
+      .buy-button {
+        font-size: 1.4rem;
+        padding: 20px 40px;
+      }
+
+      footer p {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <img src="otabek.png" alt="Otash Coin" />
+    <h1>Otash Coin</h1>
+    <p>Будущее криптовалюты начинается здесь</p>
+  </header>
+
+  <section data-aos="fade-up">
+    <h2>Описание</h2>
+    <p>Otash Coin — это новая децентрализованная криптовалюта, созданная для будущего финансовой независимости. Прозрачность, скорость и доверие — наши ключевые ценности. Инвестируй в возможности завтрашнего дня уже сегодня.</p>
+  </section>
+
+  <section data-aos="fade-right">
+    <h2>Наша команда</h2>
+    <div class="team">
+      <div class="member"><h3>Кудеров Т.</h3><p>CEO</p></div>
+      <div class="member"><h3>Кувантаев О.</h3><p>Лицо Компании</p></div>
+      <div class="member"><h3>Кучимова Г.</h3><p>COO</p></div>
+      <div class="member"><h3>Абдыгалыев Д.</h3><p>Зам. СОО</p></div>
+      <div class="member"><h3>Рустамов А.</h3><p>Маркетолог</p></div>
+      <div class="member"><h3>Атхамджонов И.</h3><p>Программист</p></div>
+    </div>
+  </section>
+
+  <section class="chart-container" data-aos="fade-left">
+    <h2>График стоимости</h2>
+    <canvas id="coinChart"></canvas>
+  </section>
+
+  <section class="calculator" data-aos="zoom-in">
+    <h2>Калькулятор покупки</h2>
+    <input type="number" id="amount" placeholder="Введите сумму в $" />
+    <p>Вы получите: <strong id="result">0</strong> Otash</p>
+  </section>
+
+  <section data-aos="fade-up">
+    <div style="text-align: center;">
+      <button class="buy-button" onclick="window.open('https://example-buy-link.com', '_blank')">Купить Otash Coin</button>
+    </div>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2 style="text-align: center;">Отзывы</h2>
+    <div class="team">
+      <div class="member">
+        <p>🔥 «Otash Coin — мой первый криптопроект, и я в восторге! Уже вижу рост!»</p>
+        <h4>— Алия К.</h4>
+      </div>
+      <div class="member">
+        <p>🚀 «Инвестировал на старте и доволен динамикой. Отличная команда!»</p>
+        <h4>— Тимур Ж.</h4>
+      </div>
+      <div class="member">
+        <p>💡 «Понятная концепция, стильный сайт, и главное — честный проект!»</p>
+        <h4>— София Р.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section data-aos="fade-up" style="margin-top: 60px;">
+    <h2 style="text-align: center;">Часто задаваемые вопросы</h2>
+    <div class="faq" style="max-width: 800px; margin: auto;">
+      <div class="faq-item">
+        <button class="faq-question">Где можно купить Otash Coin?</button>
+        <div class="faq-answer">
+          <p>Пока что на нашем сайте через кнопку "Купить". В будущем — на крупных биржах.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Есть ли у вас Whitepaper
