@@ -4,194 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Otash Coin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary: #00f7ff;
-      --background: #0f0c29;
-      --gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      --glass: rgba(255, 255, 255, 0.05);
-      --border-radius: 12px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--gradient);
-      color: #fff;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
     }
 
     header {
-      text-align: center;
-      padding: 120px 20px 80px;
-      background: url('https://images.unsplash.com/photo-1614064641938-3bbee52942dc') no-repeat center center/cover;
-      position: relative;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    header > * {
-      position: relative;
-      z-index: 2;
+      padding: 50px 20px 30px;
     }
 
     header h1 {
-      font-size: 4em;
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 0.2em;
+      font-size: 3em;
+      margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 1.3em;
-      opacity: 0.85;
-    }
-
-    header a {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 32px;
-      background-color: var(--primary);
-      color: #000;
-      text-decoration: none;
-      border-radius: var(--border-radius);
-      font-weight: bold;
-      transition: all 0.3s;
-    }
-
-    header a:hover {
-      background-color: #00e0e5;
-      transform: scale(1.05);
+    .coin-image {
+      width: 200px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 0 30px gold;
     }
 
     section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
+      margin: 40px 20px;
     }
 
-    h2 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 40px;
+    #team {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
     }
 
-    .tokenomics, .roadmap, .team {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .tokenomics div, .roadmap div, .team div {
-      background: var(--glass);
-      padding: 20px;
-      border-radius: var(--border-radius);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
-    }
-
-    .logo {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .logo img {
-      width: 200px;
-      height: auto;
-      border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    .team div {
+      background-color: rgba(255, 255, 255, 0.08);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1.1em;
     }
 
     footer {
-      text-align: center;
-      padding: 50px 20px;
       background-color: #111;
+      padding: 20px;
+      margin-top: 40px;
     }
 
     footer a {
-      color: var(--primary);
       margin: 0 15px;
+      color: #00eaff;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.5em;
-      }
-
-      header p {
-        font-size: 1em;
-      }
-    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Otash Coin</h1>
-    <p>Новая эра цифровых финансов</p>
-    <a href="#about">Узнать больше</a>
+    <img src="images/otash-coin.png" alt="Otash Coin" class="coin-image" />
+    <p>Новая эра криптовалют. Инновации. Надёжность. Будущее.</p>
   </header>
 
-  <div class="logo">
-    <img src="otash-coin.png" alt="Otash Coin Logo" />
-  </div>
-
-  <section id="about">
-    <h2>О проекте</h2>
-    <p style="text-align:center; max-width: 700px; margin: 0 auto; font-size: 1.1em; opacity: 0.9;">
-      Otash Coin — это децентрализованная криптовалюта, созданная для будущего. Скорость, безопасность и доверие — вот наши приоритеты. Вдохновлённые лучшими блокчейн-технологиями, мы создаём финансовую свободу.
-    </p>
-  </section>
-
-  <section id="tokenomics">
-    <h2>Токеномика</h2>
-    <div class="tokenomics">
-      <div>50% — для сообщества</div>
-      <div>20% — разработка</div>
-      <div>15% — партнёрства</div>
-      <div>10% — маркетинг</div>
-      <div>5% — команда</div>
-    </div>
-  </section>
-
-  <section id="roadmap">
-    <h2>Дорожная карта</h2>
-    <div class="roadmap">
-      <div>Q1: Запуск сайта и токена</div>
-      <div>Q2: NFT-коллекция и листинг</div>
-      <div>Q3: Запуск кошелька</div>
-      <div>Q4: Партнёрства и экспансия</div>
-    </div>
-  </section>
-
-  <!-- ... начальная часть остаётся прежней ... -->
-
   <section id="team">
-  <h2>Наша команда</h2>
-  <div class="team">
+    <h2>Наша команда</h2>
     <div>Кудеров Т. — CEO</div>
     <div>Кувантаев О. — CTO</div>
     <div>Кучимова Н. — Маркетинг</div>
     <div>Абдыгалыев Д. — Уборщик</div>
     <div>Рустамов А. — Зам. CTO</div>
     <div>Атхамджонов И. — Программист</div>
-  </div>
   </section>
 
   <footer>
@@ -200,5 +93,6 @@
     <a href="https://tiktok.com/@nevekstg_media" target="_blank">TikTok</a>
     <a href="https://instagram.com/nevekstg_media" target="_blank">Instagram</a>
   </footer>
+
 </body>
 </html>
