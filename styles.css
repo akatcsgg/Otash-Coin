@@ -167,3 +167,12 @@ body {
   background: #444;
   transform: scale(1.05);
 }
+.contact-item a[href*="t.me"] {
+  background: #0088cc;
+}
+.contact-item a[href*="instagram"] {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.contact-item a[href*="tiktok"] {
+  background: #000;
+}
