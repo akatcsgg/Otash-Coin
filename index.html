@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otash Coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#chart">График</a></li>
+        <li><a href="#buy">Купить</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="header fade-in">
+    <div class="header-content">
+      <h1>Добро пожаловать в <span>Otash Coin</span></h1>
+      <p>Инвестируй в будущее уже сегодня!</p>
+      <a href="#buy" class="btn-primary bounce">Купить Otash Coin</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section fade-in-up">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text slide-in-left">
+            <h2>О нас</h2>
+            <p>Otash Coin — это криптовалюта нового поколения. Мы предоставляем быстрые и безопасные транзакции, доступные по всему миру. Присоединяйтесь к нашей растущей экосистеме прямо сейчас!</p>
+            <ul class="features">
+              <li><strong>⚡ Скорость:</strong> Мгновенные транзакции.</li>
+              <li><strong>🔒 Безопасность:</strong> Передовые технологии шифрования.</li>
+              <li><strong>🌍 Глобальность:</strong> Используйте Otash Coin в любой точке мира.</li>
+            </ul>
+          </div>
+          <div class="about-image">
+            <img src="otabek.png" alt="Монета Otash Coin">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chart" class="section">
+      <div class="container fade-in">
+        <h2>График стоимости</h2>
+        <canvas id="coinChart"></canvas>
+      </div>
+    </section>
+
+    <section id="buy" class="section zoom-in">
+      <div class="container">
+        <h2>Купить Otash Coin</h2>
+        <p>Введите сумму в USD:</p>
+        <input type="number" id="amount" placeholder="Введите сумму">
+        <p>Вы получите: <strong id="result">0</strong> Otash Coin</p>
+        <button class="btn-secondary pulse" onclick="window.open('https://example-buy.com', '_blank')">Купить сейчас</button>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="container">
+        <h2 class="fade-in-up">Наша команда</h2>
+        <div class="team-grid">
+          <div class="team-member fade-in-left">
+            <h3>Кудеров Т.</h3>
+            <p>CEO</p>
+          </div>
+          <div class="team-member fade-in-left">
+            <h3>Кувантаев О.</h3>
+            <p>Лицо Компании</p>
+          </div>
+          <div class="team-member fade-in-left">
+            <h3>Кучимова Г.</h3>
+            <p>COO</p>
+          </div>
+          <div class="team-member fade-in-right">
+            <h3>Абдыгалыев Д.</h3>
+            <p>Зам. СОО</p>
+          </div>
+          <div class="team-member fade-in-right">
+            <h3>Рустамов А.</h3>
+            <p>Маркетолог</p>
+          </div>
+          <div class="team-member fade-in-right">
+            <h3>Атхамджонов И.</h3>
+            <p>Программист</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section slide-in">
+      <div class="container">
+        <h2>Контакты</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <a href="https://t.me/nevekstg_media" target="_blank">Telegram</a>
+          </div>
+          <div class="contact-item">
+            <a href="https://instagram.com/nevekstg_media" target="_blank">Instagram</a>
+          </div>
+          <div class="contact-item">
+            <a href="https://tiktok.com/@nevekstg_edits" target="_blank">TikTok</a>
+          </div>
+          <div class="contact-item">
+            <a href="mailto:support@otashcoin.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Otash Coin. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
