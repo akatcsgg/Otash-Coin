@@ -81,14 +81,9 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2em; }
-      h2 { font-size: 1.8em; }
-    }
-
     .chart-container {
       position: relative;
-      height: 500px;
+      height: 700px;
       margin: 40px 0;
     }
 
@@ -115,106 +110,53 @@
       font-weight: 500;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
+
+    .team div, .reviews div, .faq div {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .team, .reviews, .faq {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .calculator {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+
+    .calculator input, .calculator button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .calculator input {
+      width: 150px;
+    }
+
+    .calculator button {
+      background-color: #00f7ff;
+      color: black;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #00c7d5;
+    }
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <h1>Otash Coin</h1>
-    <p>Будущее криптовалют уже здесь</p>
-  </header>
-
-  <div class="logo" data-aos="zoom-in">
-    <img src="https://akatcsgg.github.io/OtashCoin/otash-coin.png" alt="Otash Coin" />
-  </div>
-
-  <!-- О проекте -->
-  <section data-aos="fade-up">
-    <h2>О проекте</h2>
-    <p style="text-align: center; max-width: 700px; margin: auto;">
-      Otash Coin — это инновационная цифровая валюта, созданная для новой эпохи децентрализованных финансов.
-      Мы стремимся сделать криптовалюту простой, безопасной и доступной для всех.
-    </p>
-  </section>
-
-  <!-- График курса с использованием TradingView -->
-  <section data-aos="fade-up" id="chart">
-    <h2>График курса</h2>
-    <div class="chart-container" id="tv_chart_container"></div>
-    <script type="text/javascript">
-      new TradingView.widget({
-        "autosize": true,
-        "symbol": "BINANCE:OTASHUSDT",  // Пример с USDT, но вам нужно указать свой символ или пару
-        "interval": "5",  // Интервал графика (например, 5 минут)
-        "timezone": "Etc/UTC",
-        "theme": "dark",
-        "style": "1",  // Линия графика
-        "locale": "ru",
-        "toolbar_bg": "#f1f3f6",
-        "hide_top_toolbar": false,
-        "hide_side_toolbar": false,
-        "withdateranges": true,
-        "allow_symbol_change": true,
-        "container_id": "tv_chart_container"
-      });
-    </script>
-  </section>
-
-  <!-- Покупка -->
-  <section data-aos="fade-up" id="purchase">
-    <h2>Покупка Otash Coin</h2>
-    <div class="card">
-      <p>Покупка доступна через следующие платформы:</p>
-      <a href="https://metamask.io" class="btn" target="_blank">MetaMask</a>
-      <a href="https://www.binance.com" class="btn" target="_blank">Binance</a>
-    </div>
-  </section>
-
-  <!-- Часто задаваемые вопросы -->
-  <section data-aos="fade-up" id="faq">
-    <h2>Часто задаваемые вопросы</h2>
-    <div class="card">
-      <h3>Что такое Otash Coin?</h3>
-      <p>Otash Coin — это новая криптовалюта, которая была создана для решения проблем с безопасностью и скоростью транзакций.</p>
-    </div>
-    <div class="card">
-      <h3>Как купить Otash Coin?</h3>
-      <p>Вы можете приобрести Otash Coin через MetaMask или Binance, следуя инструкциям на этих платформах.</p>
-    </div>
-  </section>
-
-  <!-- Отзывы -->
-  <section data-aos="fade-up" id="reviews">
-    <h2>Отзывы</h2>
-    <div class="card">
-      <p>"Otash Coin изменил мой взгляд на криптовалюту. Это будущее цифровых финансов!" - Игорь, инвестор</p>
-    </div>
-    <div class="card">
-      <p>"Отличная команда, высокая скорость транзакций, идеальная криптовалюта для международных переводов." - Анна, аналитик</p>
-    </div>
-  </section>
-
-  <!-- Команда -->
-  <section data-aos="fade-up" id="team">
-    <h2>Наша команда</h2>
-    <div class="team">
-      <div>Кудеров Т. — CEO</div>
-      <div>Кувантаев О. — Лицо Компании</div>
-      <div>Кучимова Н. — Маркетинг</div>
-      <div>Абдыгалыев Д. — CTO</div>
-      <div>Рустамов А. — Зам. CTO</div>
-      <div>Атхамджонов И. — Программист</div>
-    </div>
-  </section>
-
-  <!-- Связь с нами -->
-  <footer data-aos="fade-up">
-    <h3>Связь с нами:</h3>
-    <a href="https://t.me/nevekstg_media" target="_blank">Telegram</a>
-    <a href="https://tiktok.com/@nevekstg_media" target="_blank">TikTok</a>
-    <a href="https://instagram.com/nevekstg_media" target="_blank">Instagram</a>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-</body>
-</html>
+  <header data
