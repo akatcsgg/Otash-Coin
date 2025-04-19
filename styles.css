@@ -152,3 +152,18 @@ body {
 .team-card p {
   color: #555;
 }
+.contact-item a {
+  display: inline-block;
+  background: #111;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contact-item a:hover {
+  background: #444;
+  transform: scale(1.05);
+}
