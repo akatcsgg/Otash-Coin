@@ -1,1 +1,0 @@
-# Otash-Coin
